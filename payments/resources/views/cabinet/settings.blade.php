@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-@extends('sidebar')
+@include('sidebar')
 <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 content">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
