@@ -14,5 +14,9 @@ class MainController extends Controller {
 		return view('cabinet/home', ['account' => Account::find(Auth::user()->accountId)]);
 	}
 
+    public function getTripHistory()
+    {
+        return view('cabinet/history', ['trip' => Trip::find(Auth::user()->accoundId)]);
+    }
 
 }
