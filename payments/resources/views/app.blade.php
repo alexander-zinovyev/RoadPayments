@@ -47,7 +47,7 @@
 				</ul>
 			</div>
 		</div>
-	</nav>``
+	</nav>
 	<div class="container-fluid" role="main">
 		<div class="row">
 			<!-- content 9 columns -->
