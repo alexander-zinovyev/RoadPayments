@@ -41,20 +41,37 @@
 						<li><a href="{{ url('/auth/login') }}">Login</a></li>
 						<li><a href="{{ url('/auth/register') }}">Register</a></li>
 					@else
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
-							</ul>
-						</li>
+						<li><a href="#">{{ Auth::user()->name }}</a>
+						<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
 					@endif
 				</ul>
 			</div>
 		</div>
 	</nav>
+	<div class="container-fluid" role="main">
+		<div class="row">
+			<!-- sidebar 3 columns -->
+			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 sidebar">
+				<ul class="nav nav-pills nav-stacked">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="settings.html">Payment History</a></li>
+					<li><a href="settings.html">Settings</a></li>
+				</ul>
+			</div>
+			<!-- content 9 columns -->
+			@yield('content')
+		</div>
+	</div>
 
-	@yield('content')
-
+	<nav class="navbar navbar-inverse navbar-fixed-bottom">
+		<div class="container-fluid">
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Road Payments 228</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
