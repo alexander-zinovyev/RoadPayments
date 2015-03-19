@@ -12,10 +12,13 @@ class CreateTripsTable extends Migration {
 	 */
 	public function up()
 	{
-        $table->string('accountId');
-        $table->srting('tripId');;
-        $table->int('type');
-        $table->int('coins');
+	    Schema::create('trips', function(Blueprint $table)
+		{
+	        $table->string('accountId');
+	        $table->string('tripId');;
+	        $table->integer('type');
+	        $table->integer('coins');
+	    });
 	}
 
 	/**

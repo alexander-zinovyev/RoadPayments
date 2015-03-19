@@ -12,9 +12,11 @@ class CreateAccountsTable extends Migration {
 	 */
 	public function up()
 	{
-		$table->string('accountId');
-		$table->int('balance');
-		
+		Schema::create('accounts', function(Blueprint $table)
+		{
+			$table->string('accountId');
+			$table->integer('balance');
+		});
 	}
 
 	/**

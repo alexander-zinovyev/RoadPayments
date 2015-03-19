@@ -12,9 +12,12 @@ class CreateWithdrawsTable extends Migration {
 	 */
 	public function up()
 	{
-        $table->string('paymentsId');
-        $table->srting('accountId');;
-        $table->timestamps('date');
+	    Schema::create('withdraws', function(Blueprint $table)
+		{
+	        $table->string('paymentsId');
+	        $table->string('accountId');;
+	        $table->timestamps('date');
+	    });
 	}
 
 	/**
