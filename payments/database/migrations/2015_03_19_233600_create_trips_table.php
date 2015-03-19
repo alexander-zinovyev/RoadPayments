@@ -14,7 +14,10 @@ class CreateTripsTable extends Migration {
 	{
 		Schema::create('trips', function(Blueprint $table)
 		{
-			$table->increments('id');
+            $table->string('accountId');
+            $table->string('tripId');;
+            $table->integer('type');
+            $table->integer('coins');
 			$table->timestamps();
 		});
 	}
