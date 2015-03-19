@@ -9,6 +9,8 @@ class MainController extends Controller {
 	}
 
 	public function getIndex() {
-		return view('cabinet/controller');
+		return view('cabinet/home');
 	}
+
+
 }
