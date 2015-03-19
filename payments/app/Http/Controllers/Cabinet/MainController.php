@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers\Cabinet;
 
 use App\Http\Controllers\Controller;
+use Auth;
+use App\Account;
 
 class MainController extends Controller {
 	
@@ -9,7 +11,7 @@ class MainController extends Controller {
 	}
 
 	public function getIndex() {
-		return view('cabinet/home');
+		return view('cabinet/home', ['account' => Account::find(Auth::user()->accountId)]);
 	}
 
 
