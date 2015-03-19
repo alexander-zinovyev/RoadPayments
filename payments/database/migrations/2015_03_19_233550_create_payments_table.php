@@ -16,7 +16,7 @@ class CreatePaymentsTable extends Migration {
 		{
             $table->string('accountId');
             $table->string('paymentsId');
-            $table->timestamps('date');
+            $table->timestamp('date');
             $table->integer('status');
             $table->integer('summary');
             $table->integer('coins');
