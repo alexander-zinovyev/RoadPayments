@@ -16,6 +16,7 @@ class CreateAccountsTable extends Migration {
 		{
 			$table->string('accountId');
 			$table->integer('balance');
+			$table->timestamps();
 		});
 	}
 
@@ -26,7 +27,7 @@ class CreateAccountsTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('accounts');
 	}
 
 }
