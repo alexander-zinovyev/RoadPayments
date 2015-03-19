@@ -12,7 +12,12 @@ class CreatePaymentsTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+        $table->string('accountId');
+        $table->string('paymentsId');
+        $table->timestamps('date');
+        $table->int('status');
+        $table->int('summary');
+        $table->int('coins');
 	}
 
 	/**
