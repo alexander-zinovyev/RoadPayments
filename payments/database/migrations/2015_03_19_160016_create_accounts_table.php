@@ -14,7 +14,7 @@ class CreateAccountsTable extends Migration {
 	{
 		$table->string('accountId');
 		$table->int('balance');
-
+		
 	}
 
 	/**
