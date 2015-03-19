@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers\Cabinet;
 
 use App\Http\Controllers\Controller;
+use Auth;
 use App\Account;
 
 class MainController extends Controller {
