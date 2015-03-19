@@ -8,7 +8,7 @@ class MainController extends Controller {
 		$this->middleware('auth');
 	}
 
-	public function index() {
+	public function getIndex() {
 		return view('cabinet/controller');
 	}
 }
