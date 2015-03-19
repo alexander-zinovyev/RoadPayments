@@ -47,17 +47,9 @@
 				</ul>
 			</div>
 		</div>
-	</nav>
+	</nav>``
 	<div class="container-fluid" role="main">
 		<div class="row">
-			<!-- sidebar 3 columns -->
-			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 sidebar">
-				<ul class="nav nav-pills nav-stacked">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="settings.html">Payment History</a></li>
-					<li><a href="settings.html">Settings</a></li>
-				</ul>
-			</div>
 			<!-- content 9 columns -->
 			@yield('content')
 		</div>
