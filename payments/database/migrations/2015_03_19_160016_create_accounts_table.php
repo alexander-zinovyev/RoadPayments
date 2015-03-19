@@ -12,7 +12,7 @@ class CreateAccountsTable extends Migration {
 	 */
 	public function up()
 	{
-		$table->string('accountid');
+		$table->string('accountId');
 		$table->int('balance');
 
 	}

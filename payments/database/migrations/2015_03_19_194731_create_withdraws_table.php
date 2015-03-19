@@ -12,7 +12,9 @@ class CreateWithdrawsTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+        $table->string('paymentsId');
+        $table->srting('accountId');;
+        $table->timestamps('date');
 	}
 
 	/**

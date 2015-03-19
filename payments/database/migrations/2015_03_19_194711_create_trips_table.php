@@ -12,7 +12,10 @@ class CreateTripsTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+        $table->string('accountId');
+        $table->srting('tripId');;
+        $table->int('type');
+        $table->int('coins');
 	}
 
 	/**
