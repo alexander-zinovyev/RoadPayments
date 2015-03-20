@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Controller;
 use Auth;
+use App\Payment;
 
 //PaymentWall API classes
 use Paymentwall_Base;
