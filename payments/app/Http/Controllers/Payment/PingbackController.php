@@ -37,12 +37,14 @@ class PingbackController extends Controller {
 
 			if ($pingback->isDeliverable() && $payment->status != Payment::STATUS_PAID) {
 				$payment->status = Payment::STATUS_PAID;
+				$payment->save();
 
 				$account = Account::find($request->input('uid'));
 				$account->balance += $coins;
 				$account->save();
 			} else if ($pingback->isCancelable() && $payment->status != Payment::STATUS_REFUND) {
 				$payment->status = Payment::STATUS_REFUND;
+				$payment->save();
 
 				$account = Account::find($request->input('uid'));
 				$account->balance += $coins;
@@ -54,7 +56,6 @@ class PingbackController extends Controller {
 					//ban user
 				}
 			}
-			$payment->save();
 			return 'OK';
 		} else {
 			return view('payment/error')->withMessage($pingback->getErrorSummary());
