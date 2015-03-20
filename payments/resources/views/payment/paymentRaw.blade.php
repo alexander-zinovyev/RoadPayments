@@ -1,1 +1,1 @@
-{{ $widget->getHtmlCode(['height'=>'400','width'=>'100%']); }}
+1
