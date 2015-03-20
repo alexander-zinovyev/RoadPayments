@@ -11,11 +11,10 @@
 <script>
 	
 	$('.nav').on('click', function (e) {
-		console.log($(this));
-
-		//	.addClass('active')
-		//	.siblings()
-		//	.removeClass('active');
+		$('.active')
+			.removeClass('active')
+			.siblings()
+			.addClass('active');
 
 	});
 
