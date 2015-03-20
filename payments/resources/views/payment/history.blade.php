@@ -14,7 +14,7 @@
         </tr>
         </thead>
         <tbody>
-          @foreach ($payments->all() as $payment)
+          @foreach ($payments as $payment)
             @if ($payment->status == 1)
             <tr class="danger">
             @elseif ($payment->status == -1)
