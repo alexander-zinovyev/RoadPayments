@@ -22,10 +22,10 @@ class PingbackController extends Controller {
 		$pingback = new Paymentwall_Pingback($request->all(), $request->ip());
 		if ($pingback->validate(true)) {
 			//check signature
-			$signature = Paymentwall_Widget::calculateSignature($request->all(), 'd651224470f8ca9dba95de33e9cd2147', Request::input('sign_version', 2));
+			/*$signature = Paymentwall_Widget::calculateSignature($request->all(), 'd651224470f8ca9dba95de33e9cd2147', Request::input('sign_version', 2));
 			if ($request->input('sig') != $signature) {
 				return view('payment/error')->withMessage('signature error');
-			}
+			}*/
 
 			$coins = $pingback->getVirtualCurrencyAmount();
 			$payment = Payment::firstOrCreate([
