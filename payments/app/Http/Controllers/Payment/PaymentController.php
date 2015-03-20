@@ -21,7 +21,7 @@ class PaymentController extends Controller {
 
 	public function getIndex() {
 		$widget = new Paymentwall_Widget(
-			Auth::user()->email,
+			Auth::user()->accountId,
 			'p10_1',
 			array(),
 			array('email' => Auth::user()->email)

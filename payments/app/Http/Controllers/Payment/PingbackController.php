@@ -31,7 +31,7 @@ class PingbackController extends Controller {
 
 			$coins = $pingback->getVirtualCurrencyAmount();
 			$payment = Payment::firstOrCreate([
-				'accountId' => Auth::user()->accountId,
+				'accountId' => $request->input('uid'),
 				'paymentsId' => $pingback->getReferenceId(),
 			]);
 			if ($pingback->isUnderReview()) {
