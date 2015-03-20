@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-	.module('roadApp', [])
+	.module('roadApp', ['ngRoute'])
 	.config(configure);
 
 configure.$inject = 
