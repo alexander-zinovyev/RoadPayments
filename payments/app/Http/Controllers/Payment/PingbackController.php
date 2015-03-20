@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Paymentwall_Base;
 use Paymentwall_Widget;
 use Paymentwall_Pingback;
+use Paymentwall_Signature_Pingback;
 
 class PingbackController extends Controller {
 	public function __construct() {
