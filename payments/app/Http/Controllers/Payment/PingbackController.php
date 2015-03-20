@@ -30,7 +30,7 @@ class PingbackController extends Controller {
 			}
 
 			$coins = $pingback->getVirtualCurrencyAmount();
-			$payment = Payment::find([
+			$payment = Payment::firstOrCreate([
 				'accountId' => Auth::user()->accountId,
 				'paymentsId' => $pingback->getReferenceId(),
 			]);
