@@ -18,7 +18,7 @@ angular
 				templateUrl: '../../resources/views/cabinet/settings.blade.php',
 				controller: 'cabinet/Settings'
 			})*/
-			.when('/history', {
+			.when('/payment/history', {
 				templateUrl: '../../resources/views/cabinet/history.blade.php',
 				controller: 'cabinet/Main.controller'
 			})

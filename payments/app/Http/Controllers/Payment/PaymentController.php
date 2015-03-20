@@ -29,6 +29,10 @@ class PaymentController extends Controller {
 		return view('payment/payment')->withWidget($widget);
 	}
 
+	public function getHistory() {
+		return view('payment/history')->withPayments(Payment::where(['accountId' => Auth::user()->accountId]));
+	}
+
 	/**
 	 * GET action of /payment/withdraw
 	 *
