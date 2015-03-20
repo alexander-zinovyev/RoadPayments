@@ -18,6 +18,5 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 	'home' => 'Cabinet\MainController',
 	'settings' => 'Cabinet\SettingsController',
-	'payment' => 'Payment\PaymentController',
-	'withdraw' => 'Payment\WithdrawController'
+	'payment' => 'Payment\PaymentController'
 ]);

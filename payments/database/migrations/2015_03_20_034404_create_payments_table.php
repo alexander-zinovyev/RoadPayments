@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWithdrawsTable extends Migration {
+class CreatePaymentsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,12 @@ class CreateWithdrawsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('withdraws', function(Blueprint $table)
+		Schema::create('payments', function(Blueprint $table)
 		{
-            $table->string('paymentId');
             $table->string('accountId');
-            $table->timestamp('date');
+            $table->string('paymentsId');
+            $table->integer('status');
+            $table->integer('coins');
 			$table->timestamps();
 		});
 	}
@@ -28,7 +29,7 @@ class CreateWithdrawsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('withdraws');
+		Schema::drop('payments');
 	}
 
 }
