@@ -30,37 +30,34 @@ class PingbackController extends Controller {
 
 			$coins = $pingback->getVirtualCurrencyAmount();
 			$payment = Payment::firstOrCreate([
-				'accountId' => $request->input('uid'),
+				'accountId' => $pingback->getUserId(),
 				'paymentsId' => $pingback->getReferenceId(),
+				'coins' => $coins
 			]);
-			if ($pingback->isUnderReview()) {
-				$payment->status = Payment::STATUS_UNDER_REVIEW;
-				$payment->coins = $coins;
-			}
-			else {
-				if ($pingback->isDeliverable()) {
-					if ($payment->status == Payment::STATUS_PAID)	return 'OK';
-					$payment->status = Payment::STATUS_PAID;
-					$payment->coins = $coins;
-				} else {
-					if ($payment->status == Payment::STATUS_REFUND)	return 'OK';
-					$payment->status = Payment::STATUS_REFUND;
-					$payment->coins = -$coins;
 
-					//recommendations
-					if ($pingback->reason == Payment::REASON_CC_FRAUD
-						|| $pingback->reason == Payment::REASON_ORDER_FRAUD) {
-						//ban user
-					}
-				}
+			if ($pingback->isDeliverable() && $payment->status != Payment::STATUS_PAID) {
+				$payment->status = Payment::STATUS_PAID;
+
 				$account = Account::find($request->input('uid'));
 				$account->balance += $coins;
 				$account->save();
+			} else if ($pingback->isCancellable() && $payment->status != Payment::STATUS_REFUND) {
+				$payment->status = Payment::STATUS_REFUND;
+
+				$account = Account::find($request->input('uid'));
+				$account->balance += $coins;
+				$account->save();
+
+				//recommendations
+				if ($pingback->reason == Payment::REASON_CC_FRAUD
+					|| $pingback->reason == Payment::REASON_ORDER_FRAUD) {
+					//ban user
+				}
 			}
 			$payment->save();
-			return 'OK';
-		} else {
-			return view('payment/error')->withMessage($pingback->getErrorSummary());
 		}
+		return 'OK';
+	} else {
+		return view('payment/error')->withMessage($pingback->getErrorSummary());
 	}
 }
