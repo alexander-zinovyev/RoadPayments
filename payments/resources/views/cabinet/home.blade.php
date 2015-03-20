@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
       <div class="block">
-        <p><strong>Your Balance :</strong> 25 coins</p>
+        <p><strong>Your Balance :</strong> <?php echo $account->balance; ?> coins</p>
         <button href="#" class="btn btn-success fill-balance-btn">Fill balance</button>
       </div>
     </div>
