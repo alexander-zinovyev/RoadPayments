@@ -2,7 +2,7 @@
 
 angular
 	.module('roadApp', ['ngRoute'])
-	.config(function configure($interpolateProvider, $locationProvider, $routeProvider) {
+	.config(function ($interpolateProvider, $locationProvider, $routeProvider) {
 
 		$interpolateProvider.startSymbol('<%');
 		$interpolateProvider.endSymbol('%>');
@@ -12,7 +12,7 @@ angular
 		$routeProvider
 			.when('/home', {
 				templateUrl: '../../resources/views/cabinet/home.blade.php',
-				controller: 'cabinet/Main'			
+				controller: 'cabinet/Main.controller'			
 			})
 			/*.when('/settings', {
 				templateUrl: '../../resources/views/cabinet/settings.blade.php',
@@ -20,7 +20,7 @@ angular
 			})*/
 			.when('/history', {
 				templateUrl: '../../resources/views/cabinet/history.blade.php',
-				controller: 'cabinet/Main'
+				controller: 'cabinet/Main.controller'
 			})
 			.otherwise({ redirectTo: '/home' });
 });
