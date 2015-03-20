@@ -21,4 +21,4 @@ Route::controllers([
 	'payment' => 'Payment\PaymentController'
 ]);
 
-Route::get('payment/pingback', 'Payment\PingbackController@index');
+Route::get('pingback', 'Payment\PingbackController@index');
