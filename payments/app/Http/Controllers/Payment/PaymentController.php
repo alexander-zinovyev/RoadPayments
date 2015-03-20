@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 use Auth;
 use App\Payment;
+use Illuminate\Http\Request;
 
 //PaymentWall API classes
 use Paymentwall_Base;
@@ -30,6 +31,17 @@ class PaymentController extends Controller {
 		return view('payment/payment')->withWidget($widget);
 	}
 
+	public function getAjax(Request $request) {
+		if (!$request->ajax()) return 'not an ajax request';
+		$widget = new Paymentwall_Widget(
+			Auth::user()->accountId,
+			'p10_1',
+			array(),
+			array('email' => Auth::user()->email)
+		);
+		return view('payment/paymentRaw')->withWidget($widget);
+	}
+
 	public function getHistory() {
 		return view('payment/history')->withPayments(Payment::where(['accountId' => Auth::user()->accountId])->get());
 	}
@@ -40,8 +52,9 @@ class PaymentController extends Controller {
 	 * Shows the withdraw widget (API?)
 	 * @return view
 	 */
-	public function getWithdraw() {
-		return view('payment/withdraw');
+	public function getWithdraw(Request $request) {
+		$withdraw = $request->all();
+		return view('payment/withdrawConfirmation')->withWithdraw($withdraw);
 	}
 
 	/*
