@@ -70,7 +70,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.13/angular.js"></script>
 	<script src="{{ asset('/js/app.js') }}"></script>
 	<script src="{{ asset('/js/cabinet/Main.controller.js') }}"></script>
-	<script src="{{ asset('/js/cabinet/Settings.controller.js') }}"></script>
+	<!--<script src="{{ asset('/js/cabinet/Settings.controller.js') }}"></script>-->
 
 </body>
 </html>

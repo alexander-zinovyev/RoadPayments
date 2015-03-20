@@ -5,7 +5,7 @@ angular
 	.config(configure);
 
 configure.$inject = 
-	['$interpolatenProvider', '$locationProvider', '$routeProvider'];
+	['$interpolateProvider', '$locationProvider', '$routeProvider'];
 
 function configure($interpolateProvider, $locationProvider, $routeProvider) {
 	$interpolateProvider.startSymbol('<%');
@@ -18,10 +18,10 @@ function configure($interpolateProvider, $locationProvider, $routeProvider) {
 			templateUrl: '../../resources/views/cabinet/home.blade.php',
 			controller: 'cabinet/Main'			
 		})
-		.when('/settings', {
+		/*.when('/settings', {
 			templateUrl: '../../resources/views/cabinet/settings.blade.php',
 			controller: 'cabinet/Settings'
-		})
+		})*/
 		.when('/history', {
 			templateUrl: '../../resources/views/cabinet/history.blade.php',
 			controller: 'cabinet/Main'
