@@ -25,8 +25,8 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav navbar-right nav-text-color">
-                <li><a href="#">Sign in</a></li>
-                <li><a href="#">Sign Up</a></li>
+                <li><a href="Auth/login">Sign in</a></li>
+                <li><a href="Auth/register">Sign Up</a></li>
               </ul>
            </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
