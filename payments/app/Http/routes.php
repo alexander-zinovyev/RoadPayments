@@ -20,3 +20,5 @@ Route::controllers([
 	'settings' => 'Cabinet\SettingsController',
 	'payment' => 'Payment\PaymentController'
 ]);
+
+Route::get('payment/pingback', 'Payment\PingbackController@index');
