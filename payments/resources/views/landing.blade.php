@@ -73,7 +73,7 @@
             <div class="carousel-caption">
               <h1>Что обеспечивает гарантию качетсва?</h1>
               <p>Вы может не переживать, на счет того, что на вашей карте не будет денег, в самый ответственный момент. При поддержке плтежного сервиса Paymentwall счет на карте будет пополняться мгновенно, и переживать за, то - прошла оплата или нет - вы не будуте</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Join us today</a></p>
+              <p><a class="btn btn-lg btn-primary" href="{{ url('/auth/register') }}" role="button">Join us today</a></p>
             </div>
           </div>
         </div>
