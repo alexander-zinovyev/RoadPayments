@@ -31,7 +31,7 @@ class PaymentController extends Controller {
 	}
 
 	public function getHistory() {
-		return view('payment/history')->withPayments(Payment::where(['accountId' => Auth::user()->accountId]));
+		return view('payment/history')->withPayments(Payment::where(['accountId' => Auth::user()->accountId])->get());
 	}
 
 	/**
