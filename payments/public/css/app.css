@@ -3711,7 +3711,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #ffffff;
-  background-color: #337ab7;
+  background-color: #444;
 }
 .nav-stacked > li {
   float: none;
@@ -6284,12 +6284,4 @@ table input {
 
 table input:focus {
   border: 1px solid blue;
-}
-
-.active {
-  background: #444 !important;
-}
-
-.active a {
-  color: #fff;
 }
