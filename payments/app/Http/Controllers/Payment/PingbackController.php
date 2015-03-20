@@ -20,7 +20,7 @@ class PingbackController extends Controller {
 
 	public function index(Request $request) {
 		$pingback = new Paymentwall_Pingback($request->all(), $request->ip());
-		if ($pingback->validate()) {
+		if ($pingback->validate(true)) {
 			//check signature
 			$signature = Paymentwall_Widget::calculateSignature($request->all(), 'd651224470f8ca9dba95de33e9cd2147', Request::input('sign_version', 2));
 			if ($request->input('sig') != $signature) {
