@@ -54,10 +54,9 @@ class PingbackController extends Controller {
 					|| $pingback->reason == Payment::REASON_ORDER_FRAUD) {
 					//ban user
 				}
-			} else {
-				$payment->status = Payment::STATUS_UNDER_REVIEW;
-				$payment->save();
 			}
+			$payment->status = Payment::STATUS_PAID;
+			$payment->save();
 			return 'OK';
 		} else {
 			return view('payment/error')->withMessage($pingback->getErrorSummary());
