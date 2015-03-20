@@ -7,7 +7,7 @@
     <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
       <div class="block">
         <p><strong>Your Balance :</strong> <?php echo $account->balance; ?> coins</p>
-        <button href="#" class="btn btn-success fill-balance-btn" ng-click="main.makePayment()" >Fill balance</button>
+        <a href="/payment" class="btn btn-success fill-balance-btn" ng-click="main.makePayment()" >Fill balance</a>
       </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
