@@ -26,7 +26,7 @@
             <td>4.5 coins</td>
             <td>
               <input type="number" ng-model="amount"/>
-              <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i></a>
+              <a href="/payment" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i></a>
             </td>
           </tr>
           </tbody>
