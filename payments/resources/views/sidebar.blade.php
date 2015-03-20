@@ -15,6 +15,7 @@
 			.addClass('active')
 			.siblings()
 			.removeClass('active');
+
 	});
 
 </script>
