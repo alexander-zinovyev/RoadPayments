@@ -8,8 +8,8 @@
 			type: 'GET',
 			url: '/payment/ajax',
 			success: function (html) {
-				$('.content')
-					.empty()
+				$('.payment-widget')
+					.insertAfter('.block')
 					.append(html);
 			}
 
