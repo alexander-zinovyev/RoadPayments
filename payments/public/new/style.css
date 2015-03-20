@@ -1,0 +1,20 @@
+.carousel-inner
+{
+  height: 600px;
+}
+
+.slide
+{
+  height: 600px;
+}
+.item .container
+{
+  height: 600px;
+}
+
+.navbar-wrapper
+{
+  background-color: white;
+  background-color: transparent;
+  opacity: 0.8;
+}
