@@ -55,9 +55,9 @@ class PingbackController extends Controller {
 				}
 			}
 			$payment->save();
+			return 'OK';
+		} else {
+			return view('payment/error')->withMessage($pingback->getErrorSummary());
 		}
-		return 'OK';
-	} else {
-		return view('payment/error')->withMessage($pingback->getErrorSummary());
 	}
 }
