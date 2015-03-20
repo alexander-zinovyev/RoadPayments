@@ -6,6 +6,11 @@ use App\Account;
 use Auth;
 use Illuminate\Http\Request;
 
+//PaymentWall API classes
+use Paymentwall_Base;
+use Paymentwall_Widget;
+use Paymentwall_Pingback;
+
 class PingbackController extends Controller {
 	public function __construct() {
 		Paymentwall_Base::setApiType(Paymentwall_Base::API_VC);
