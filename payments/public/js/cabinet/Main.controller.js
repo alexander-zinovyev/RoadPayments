@@ -2,14 +2,10 @@
 
 angular
 	.module('roadApp')
-	.controller(Main);
+	.controller(function ($location) {
+		var vm = this;
 
-Main.$inject = ['$location'];
-
-function Main($location) {
-	var vm = this;
-
-	vm.makePayment = function () {
-		$location.path = '/payment';
-	};
-}
+		vm.makePayment = function () {
+			$location.path = '/payment';
+		};
+});

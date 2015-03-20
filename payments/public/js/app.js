@@ -2,29 +2,25 @@
 
 angular
 	.module('roadApp', ['ngRoute'])
-	.config(configure);
+	.config(function configure($interpolateProvider, $locationProvider, $routeProvider) {
 
-configure.$inject = 
-	['$interpolateProvider', '$locationProvider', '$routeProvider'];
+		$interpolateProvider.startSymbol('<%');
+		$interpolateProvider.endSymbol('%>');
 
-function configure($interpolateProvider, $locationProvider, $routeProvider) {
-	$interpolateProvider.startSymbol('<%');
-	$interpolateProvider.endSymbol('%>');
+		$locationProvider.html5Mode(true);
 
-	$locationProvider.html5Mode(true);
-
-	$routeProvider
-		.when('/home', {
-			templateUrl: '../../resources/views/cabinet/home.blade.php',
-			controller: 'cabinet/Main'			
-		})
-		/*.when('/settings', {
-			templateUrl: '../../resources/views/cabinet/settings.blade.php',
-			controller: 'cabinet/Settings'
-		})*/
-		.when('/history', {
-			templateUrl: '../../resources/views/cabinet/history.blade.php',
-			controller: 'cabinet/Main'
-		})
-		.otherwise({ redirectTo: '/home' });
-}
+		$routeProvider
+			.when('/home', {
+				templateUrl: '../../resources/views/cabinet/home.blade.php',
+				controller: 'cabinet/Main'			
+			})
+			/*.when('/settings', {
+				templateUrl: '../../resources/views/cabinet/settings.blade.php',
+				controller: 'cabinet/Settings'
+			})*/
+			.when('/history', {
+				templateUrl: '../../resources/views/cabinet/history.blade.php',
+				controller: 'cabinet/Main'
+			})
+			.otherwise({ redirectTo: '/home' });
+});
