@@ -6,15 +6,11 @@
 		$.ajax({
 
 			type: 'GET',
-			url: '/payment/ajax',
-			success: function (html) {
-				$('.payment-widget')
-					.append(html);
-			}
-
-
-		});
-
+			url: 'payment/ajax'
+		})
+			.done(function (html) {
+				$('.payment-widget').append(html);
+			});
 	});
 
 })();
