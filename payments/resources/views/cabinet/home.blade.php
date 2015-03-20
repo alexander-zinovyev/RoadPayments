@@ -7,7 +7,7 @@
     <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
       <div class="block">
         <p><strong>Your Balance :</strong> <?php echo $account->balance; ?> coins</p>
-        <button class="btn btn-success fill-balance-btn">Fill balance</button>
+        <a href="/payment"><button class="btn btn-success fill-balance-btn">Fill balance</button></a>
       </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -25,13 +25,15 @@
             <td>Bus</td>
             <td>4.5 coins</td>
             <td>
-              <input type="number" ng-model="amount"/>
+              <input type="number"/>
               <a href="/payment" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i></a>
             </td>
+          </tr>
+          <tr>
             <td>Train</td>
             <td>15 coins</td>
             <td>
-              <input type="number" ng-model="amount"/>
+              <input type="number"/>
               <a href="/payment" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i></a>
             </td>
           </tr>
