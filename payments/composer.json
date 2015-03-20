@@ -17,7 +17,10 @@
 		],
 		"psr-4": {
 			"App\\": "app/"
-		}
+		},
+		"files": [
+			"app/Libraries/paymentwall/lib/paymentwall.php"
+		]
 	},
 	"autoload-dev": {
 		"classmap": [
