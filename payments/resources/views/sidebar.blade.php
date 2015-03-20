@@ -11,7 +11,7 @@
 <script>
 	
 	$('.nav').on('click', function (e) {
-		$('.active')
+		$(e.target)
 			.removeClass('active')
 			.siblings()
 			.addClass('active');
