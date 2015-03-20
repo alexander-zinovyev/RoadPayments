@@ -104,9 +104,9 @@
 <script>
   
   $.backstretch([
-      "../../public/img/background/the-plane.jpg"
-    , "../../public/img/background/tram_hd_by_ovixphotography-d5ysl24.jpg"
-    , "../../public/img/background/railways.jpg"
+      "payments/public/img/background/the-plane.jpg"
+    , "payments/public/img/background/tram_hd_by_ovixphotography-d5ysl24.jpg"
+    , "payments/public/img/background/railways.jpg"
   ], {duration: 10000, fade: 700});
 
 </script>
