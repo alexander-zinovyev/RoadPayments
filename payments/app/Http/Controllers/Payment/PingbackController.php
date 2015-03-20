@@ -29,60 +29,34 @@ class PingbackController extends Controller {
 			}
 
 			$coins = $pingback->getVirtualCurrencyAmount();
-			$payment = Payment::find($pingback->getReferenceId());
-			if ($payment == null) {
-				//first time
-				$payment = Payment::create([
-					'accountId' => $pingback->getUserId(),
-					'paymentsId' => $pingback->getReferenceId(),
-					'coins' => $coins
-				]);
-				if ($pingback->isDeliverable()) {
-					$payment->status = Payment::STATUS_PAID;
-					$payment->save();
+			$payment = Payment::firstOrCreate([
+				'accountId' => $pingback->getUserId(),
+				'paymentsId' => $pingback->getReferenceId(),
+				'coins' => $coins
+			]);
+			if ($pingback->isDeliverable()) {
+				$payment->status = Payment::STATUS_PAID;
+				$payment->save();
 
-					$account = Account::find($request->input('uid'));
-					$account->balance += $coins;
-					$account->save();
-				} else if ($pingback->isCancelable()) {
-					$payment->status = Payment::STATUS_REFUND;
-					$payment->save();
+				$account = Account::find($request->input('uid'));
+				$account->balance += $coins;
+				$account->save();
+			} else if ($pingback->isCancelable()) {
+				$payment->status = Payment::STATUS_REFUND;
+				$payment->save();
 
-					$account = Account::find($request->input('uid'));
-					$account->balance += $coins;
-					$account->save();
+				$account = Account::find($request->input('uid'));
+				$account->balance += $coins;
+				$account->save();
 
-					//recommendations
-					if ($pingback->reason == Payment::REASON_CC_FRAUD
-						|| $pingback->reason == Payment::REASON_ORDER_FRAUD) {
-						//ban user
-					}
-				} else {
-					$payment->status = Payment::STATUS_UNDER_REVIEW;
-					$payment->save();
+				//recommendations
+				if ($pingback->reason == Payment::REASON_CC_FRAUD
+					|| $pingback->reason == Payment::REASON_ORDER_FRAUD) {
+					//ban user
 				}
 			} else {
-				if ($pingback->isDeliverable() && $payment->status != Payment::STATUS_PAID) {
-					$payment->status = Payment::STATUS_PAID;
-					$payment->save();
-
-					$account = Account::find($request->input('uid'));
-					$account->balance += $coins;
-					$account->save();
-				} else if ($pingback->isCancelable() && $payment->status != Payment::STATUS_REFUND) {
-					$payment->status = Payment::STATUS_REFUND;
-					$payment->save();
-
-					$account = Account::find($request->input('uid'));
-					$account->balance += $coins;
-					$account->save();
-
-					//recommendations
-					if ($pingback->reason == Payment::REASON_CC_FRAUD
-						|| $pingback->reason == Payment::REASON_ORDER_FRAUD) {
-						//ban user
-					}
-				}
+				$payment->status = Payment::STATUS_UNDER_REVIEW;
+				$payment->save();
 			}
 			return 'OK';
 		} else {

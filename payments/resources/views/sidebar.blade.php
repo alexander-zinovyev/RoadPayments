@@ -8,3 +8,13 @@
     </ul>
   </div>
 </div>
+<script>
+	
+	$('.nav').on('click', function (e) {
+		$(this)
+			.addClass('active')
+			.siblings()
+			.removeClass('active');
+	});
+
+</script>
