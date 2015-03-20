@@ -6250,6 +6250,7 @@ label,
 
 .fill-balance-btn {
   border-bottom: 3px solid #444;
+  display: block;
   height: 40px;
   width: 150px;
   font-size: 17px;
