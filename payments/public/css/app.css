@@ -6287,5 +6287,6 @@ table input:focus {
 }
 
 .payment-wall-widget {
-  margin: auto;
+  position: absolute;
+  left: calc(50% - 750px);
 }
