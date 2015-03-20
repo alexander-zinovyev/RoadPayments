@@ -25,8 +25,13 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav navbar-right nav-text-color">
-                <li><a href="Auth/login">Sign in</a></li>
-                <li><a href="Auth/register">Sign Up</a></li>
+              @if (Auth::guest())
+				<li><a href="{{ url('/auth/login') }}">Sign In</a></li>
+				<li><a href="{{ url('/auth/register') }}">Sign Up</a></li>
+				@else
+				<li><a href="#">{{ Auth::user()->name }} {{ Auth::user()->surname }}</a>
+				<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
+				@endif
               </ul>
            </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
