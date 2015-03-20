@@ -3,7 +3,6 @@
 use App\Http\Controllers\Controller;
 use App\Payment;
 use App\Account;
-use Auth;
 use Illuminate\Http\Request;
 
 //PaymentWall API classes
@@ -54,7 +53,7 @@ class PingbackController extends Controller {
 						//ban user
 					}
 				}
-				$account = Account::find(Auth::user()->accountId);
+				$account = Account::find($request->input('uid'));
 				$account->balance += $coins;
 				$account->save();
 			}
