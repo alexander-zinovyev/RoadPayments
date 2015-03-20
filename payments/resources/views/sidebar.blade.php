@@ -10,8 +10,8 @@
 </div>
 <script>
 	
-	$('.nav').on('click', function (e) {
-		$(e.target)
+	$('.active').on('click', function (e) {
+		$(this)
 			.removeClass('active')
 			.siblings()
 			.addClass('active');
