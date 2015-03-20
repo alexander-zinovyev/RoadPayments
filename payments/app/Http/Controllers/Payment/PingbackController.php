@@ -41,7 +41,7 @@ class PingbackController extends Controller {
 				$account = Account::find($request->input('uid'));
 				$account->balance += $coins;
 				$account->save();
-			} else if ($pingback->isCancellable() && $payment->status != Payment::STATUS_REFUND) {
+			} else if ($pingback->isCancelable() && $payment->status != Payment::STATUS_REFUND) {
 				$payment->status = Payment::STATUS_REFUND;
 
 				$account = Account::find($request->input('uid'));
