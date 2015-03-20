@@ -9,7 +9,6 @@
         <p><strong>Your Balance :</strong> <?php echo $account->balance; ?> coins</p>
         <button class="btn btn-success fill-balance-btn">Fill balance</button>
       </div>
-      <div class="payment-widget"></div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="prices">
@@ -25,6 +24,12 @@
           <tr>
             <td>Bus</td>
             <td>4.5 coins</td>
+            <td>
+              <input type="number" ng-model="amount"/>
+              <a href="/payment" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i></a>
+            </td>
+            <td>Train</td>
+            <td>15 coins</td>
             <td>
               <input type="number" ng-model="amount"/>
               <a href="/payment" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i></a>
