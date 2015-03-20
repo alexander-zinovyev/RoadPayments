@@ -9,6 +9,7 @@
         <p><strong>Your Balance :</strong> <?php echo $account->balance; ?> coins</p>
         <button class="btn btn-success fill-balance-btn">Fill balance</button>
       </div>
+      <div class="payment-widget"></div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="prices">
