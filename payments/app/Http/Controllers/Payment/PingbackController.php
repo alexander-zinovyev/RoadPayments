@@ -18,12 +18,12 @@ class PingbackController extends Controller {
 		Paymentwall_Base::setSecretKey('d651224470f8ca9dba95de33e9cd2147');
 	}
 
-	public function index() {
-		$pingback = new Paymentwall_Pingback(Request::all(), Request::root());
+	public function index(Request $request) {
+		$pingback = new Paymentwall_Pingback($request->all(), $request->root());
 		if ($pingback->validate()) {
 			//check signature
-			$signature = Paymentwall_Widget::calculateSignature(Request::all(), 'd651224470f8ca9dba95de33e9cd2147', Request::input('sign_version', 2));
-			if (Request::input('sig') != $signature) {
+			$signature = Paymentwall_Widget::calculateSignature($request->all(), 'd651224470f8ca9dba95de33e9cd2147', Request::input('sign_version', 2));
+			if ($request->input('sig') != $signature) {
 				return view('payment/error')->withMessage('signature error');
 			}
 
