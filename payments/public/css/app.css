@@ -6285,3 +6285,11 @@ table input {
 table input:focus {
   border: 1px solid blue;
 }
+
+.active {
+  background: #444 !important;
+}
+
+.acitve a {
+  color: #fff;
+}
