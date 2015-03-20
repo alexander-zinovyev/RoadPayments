@@ -8,9 +8,9 @@
       <table class="table table-striped">
         <thead>
         <tr>
-          <th>Transport type</th>
-          <th>Price</th>
-          <th>Bought at</th>
+          <th>Payment Date</th>
+          <th>Count</th>
+          <th>Payment status</th>
         </tr>
         </thead>
         <tbody>

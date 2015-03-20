@@ -4,6 +4,7 @@
     <ul class="nav nav-pills nav-stacked">
       <li id="home" class="active"><a href="/home">Home</a></li>
       <li id="history"><a href="/payment/history">History</a></li>
+      <li id="payment"><a href="/payment">Payment</a></li>
      <!-- <li><a href="/settings">Settings</a></li>-->
     </ul>
   </div>
@@ -22,4 +23,11 @@
 			.siblings()
 			.removeClass('active');
 	}
+
+  if (location.pathname === '/payment') {
+    $('#payment')
+      .addClass('active')
+      .siblings()
+      .removeClass('active');
+  }
 </script>

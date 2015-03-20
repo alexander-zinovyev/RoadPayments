@@ -66,6 +66,7 @@
 		</div>
 	</nav>
 	<!-- Scripts -->
+	<script src="{{ asset('js/fillBalance.js') }}"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 </body>
