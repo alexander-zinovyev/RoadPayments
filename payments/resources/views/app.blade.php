@@ -60,7 +60,7 @@
 		<div class="container-fluid">
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Road Payments 228dasdasd</a></li>
+					<li><a href="#">Road Payments</a></li>
 				</ul>
 			</div>
 		</div>

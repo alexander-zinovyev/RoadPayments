@@ -9,7 +9,6 @@
   </div>
 </div>
 <script>
-	
 	if (location.pathname === '/payment/history') {
 		$('#history')
 			.addClass('active')
@@ -23,5 +22,4 @@
 			.siblings()
 			.removeClass('active');
 	}
-
 </script>
