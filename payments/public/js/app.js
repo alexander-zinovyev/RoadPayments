@@ -5,7 +5,7 @@ angular
 	.config(configure);
 
 configure.$inject = 
-	['$interpolationProvider', '$locationProvider', '$routeProvider'];
+	['$interpolatenProvider', '$locationProvider', '$routeProvider'];
 
 function configure($interpolateProvider, $locationProvider, $routeProvider) {
 	$interpolateProvider.startSymbol('<%');
